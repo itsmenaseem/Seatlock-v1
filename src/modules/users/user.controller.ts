@@ -16,10 +16,6 @@ export async function createUserController(req: Request, res: Response) {
 }
 
 
-export async function getUserController(req: Request, res: Response) {
-    
-}
-
 
 export async function loginUserController(req: Request, res: Response){
     const {email,password} = req.body;
@@ -30,7 +26,5 @@ export async function loginUserController(req: Request, res: Response){
       httpOnly:true,
        maxAge: 24 * 60 * 60 * 1000 // 1 Day
      })
-     return res.status(200).send({user,
-        token
-     });
+     return res.status(200).send({user});
 }

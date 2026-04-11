@@ -1,10 +1,9 @@
 import { Router } from "express";
 import {
   createUserController,
-  getUserController,
   loginUserController,
 } from "./user.controller";
-import { body, param, query } from "express-validator";
+import { body } from "express-validator";
 import { requestValidationMiddleware } from "../../middlewares/request-validaton.middleware";
 
 
