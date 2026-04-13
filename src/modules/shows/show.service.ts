@@ -8,8 +8,12 @@ export  function createShowService(data:CreateShow):Promise<ShowDoc>{
     return createShow(data);
 }
 
-export async function getShowByIdService(id:string):Promise<ShowDoc>{
-    const show = await findShowById(id);
+export async function getShowByIdService(id:string,owner?:string):Promise<ShowDoc>{
+     const query: {_id: string, owner?: string} = { _id: id }; 
+        if (owner) {
+            query.owner = owner;
+        }
+    const show = await findShowById(query);
     if(!show){
         throw new NotFoundError("Show not found");
     }
@@ -24,5 +28,7 @@ export  function searchShowsService(query:string, pagination: Pagination):Promis
 export function getAllShowsService(pagination: Pagination):Promise<ShowDoc[]>{
     return searchShows("",pagination);
 }   
+
+
 
 

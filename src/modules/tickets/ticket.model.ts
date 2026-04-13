@@ -1,5 +1,6 @@
 import  { model, Schema, Types } from "mongoose"
 import { CreateTicket } from "../../types/create-ticket.type";
+import { SeatStatus } from "../../types/seat-status.type";
 
 export interface TicketDoc extends CreateTicket , Document {}
 
@@ -9,12 +10,26 @@ const ticketSchema = new Schema<TicketDoc>({
         required:true,
         min:0
     },
-    eventId:{
+    showId:{
         type:String
     },
     userId:{
         type:String,
         required:true
+    },
+    status:{
+        type:String,
+        enum: Object.values(SeatStatus),
+        default: SeatStatus.AVAILABLE,
+        select:false
+    },
+    lockUntil:{
+        type:Date,
+        select:false
+    },
+    lockedBy:{
+        type:String,
+        select:false
     }
 },{
     timestamps:true,

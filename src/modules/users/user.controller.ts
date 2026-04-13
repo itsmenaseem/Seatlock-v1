@@ -28,3 +28,10 @@ export async function loginUserController(req: Request, res: Response){
      })
      return res.status(200).send({user});
 }
+
+export function logout(req:Request,res:Response){
+  res.cookie("token","",{
+    maxAge:0
+  });
+  res.status(200).json({message:"Logged Out"})
+}

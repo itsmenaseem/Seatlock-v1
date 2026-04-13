@@ -1,6 +1,10 @@
+import { SeatStatus } from "./seat-status.type";
 
 export interface CreateTicket {
     amount:number;
-    eventId:string;
+    showId:string;
     userId:string;
+    status?: SeatStatus;
+    lockUntil?: Date;
+    lockedBy?:string;
 }

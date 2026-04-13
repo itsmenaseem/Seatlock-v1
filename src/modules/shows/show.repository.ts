@@ -11,8 +11,8 @@ export function createShow(data: CreateShow): Promise<ShowDoc> {
 }
 
 
-export function findShowById(id: string): Promise<ShowDoc | null> {
-    return Show.findById(id);
+export function findShowById(query:{_id: string, owner?: string}): Promise<ShowDoc | null> {
+    return Show.findOne(query);
 }
 
 
@@ -28,10 +28,3 @@ export function searchShows(query: string, pagination: Pagination): Promise<Show
     .limit(limit);
 }
 
-
-export function findEventByOwnerAndId(owner:string,id:string):Promise<ShowDoc | null>{
-    return Show.findOne({
-        owner,
-        _id:id
-    })
-}

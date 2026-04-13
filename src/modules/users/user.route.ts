@@ -2,6 +2,7 @@ import { Router } from "express";
 import {
   createUserController,
   loginUserController,
+  logout,
 } from "./user.controller";
 import { body } from "express-validator";
 import { requestValidationMiddleware } from "../../middlewares/request-validaton.middleware";
@@ -50,6 +51,6 @@ router.post(
   loginUserController,
 );
 
-
+router.get("/logout",logout)
 
 export { router as UserRoutes };
