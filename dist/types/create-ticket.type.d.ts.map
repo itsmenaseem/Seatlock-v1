@@ -1,0 +1,1 @@
+{"version":3,"file":"create-ticket.type.d.ts","sourceRoot":"","sources":["../../src/types/create-ticket.type.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,UAAU,EAAE,MAAM,oBAAoB,CAAC;AAEhD,MAAM,WAAW,YAAY;IACzB,MAAM,EAAC,MAAM,CAAC;IACd,MAAM,EAAC,MAAM,CAAC;IACd,MAAM,EAAC,MAAM,CAAC;IACd,MAAM,CAAC,EAAE,UAAU,CAAC;IACpB,SAAS,CAAC,EAAE,IAAI,CAAC;IACjB,QAAQ,CAAC,EAAC,MAAM,CAAC;CACpB"}
