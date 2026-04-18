@@ -9,9 +9,13 @@ import { PaymentRoutes } from "./modules/payments/payment.route";
 import { stripeConfig } from "./configs/stripe.config";
 import { StripeWrapper } from "./wrappers/stripe.wrapper";
 import { handleStripeEvent } from "./utils/stripe-event.util";
-
+import cors from "cors";
 const app = express();
 
+app.use(cors({
+  origin:'*',
+  credentials:true
+}))
 app.post(
   "/webhook",
   express.raw({ type: "application/json" }),
