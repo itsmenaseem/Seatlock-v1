@@ -1,1 +1,0 @@
-{"version":3,"file":"create-payment.type.d.ts","sourceRoot":"","sources":["../../src/types/create-payment.type.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,kBAAkB,CAAC;AAEjD,MAAM,WAAW,aAAa;IAC1B,OAAO,EAAC,MAAM,CAAC;IACf,MAAM,EAAC,MAAM,CAAC;IACd,eAAe,CAAC,EAAC,MAAM,CAAC;IACxB,MAAM,EAAC,MAAM,CAAC;IACd,QAAQ,EAAC,MAAM,CAAC;IAChB,MAAM,CAAC,EAAC,aAAa,CAAA;CACxB"}

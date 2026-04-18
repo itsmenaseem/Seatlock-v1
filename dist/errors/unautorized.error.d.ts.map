@@ -1,1 +1,0 @@
-{"version":3,"file":"unautorized.error.d.ts","sourceRoot":"","sources":["../../src/errors/unautorized.error.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,gBAAgB,CAAC;AAE7C,qBAAa,iBAAkB,SAAQ,WAAW;IAC9C,UAAU,EAAE,MAAM,CAAO;gBACb,OAAO,GAAE,MAA4B;IAIjD,SAAS,IAAI;QAAE,OAAO,EAAE,MAAM,CAAC;QAAC,KAAK,CAAC,EAAE,MAAM,CAAC;KAAE,EAAE;CAKtD"}

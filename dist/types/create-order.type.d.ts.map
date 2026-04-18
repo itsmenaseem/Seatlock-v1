@@ -1,1 +1,0 @@
-{"version":3,"file":"create-order.type.d.ts","sourceRoot":"","sources":["../../src/types/create-order.type.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,gBAAgB,CAAC;AAG7C,MAAM,WAAW,WAAW;IACxB,MAAM,EAAC,MAAM,CAAC;IACd,QAAQ,EAAC,MAAM,CAAC;IAChB,SAAS,EAAC,IAAI,CAAC;IACf,MAAM,EAAC,MAAM,CAAC;IACd,MAAM,CAAC,EAAC,WAAW,CAAC;IACpB,MAAM,CAAC,EAAC,OAAO,CAAC;CACnB"}
