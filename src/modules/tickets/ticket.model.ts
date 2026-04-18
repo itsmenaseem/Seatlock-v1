@@ -36,7 +36,9 @@ const ticketSchema = new Schema<TicketDoc>({
     toJSON:{
         transform(doc,ret:any){
             ret.id = ret._id
+            ret.version = ret.__v
             delete ret._id
+            delete ret.__v
             return ret
         }
     }

@@ -2,11 +2,15 @@ import {Router } from "express"
 import { authMiddleware } from "../../middlewares/auth.middleware";
 import { body, param } from "express-validator";
 import { requestValidationMiddleware } from "../../middlewares/request-validaton.middleware";
-import {createTicketController, getTicketsByShowController, reserveTicketController, updateTicketAmountController} from "./ticket.controller";
+import {createTicketsController, getTicketsByShowController, reserveTicketController, updateTicketAmountController} from "./ticket.controller";
 const router = Router();
 
 // create ticket
 router.post("/",authMiddleware,[
+  body("tickets")
+    .notEmpty().withMessage("Tickets count is required")
+    .bail()
+    .isInt({gt:0}).withMessage("Tickets count must be a positive integer"),
     body("amount")
         .notEmpty().withMessage("Amount is required")
         .bail()
@@ -15,7 +19,7 @@ router.post("/",authMiddleware,[
         .notEmpty().withMessage("Show ID is required")
         .bail()
         .isMongoId().withMessage("Invalid showid")    
-],requestValidationMiddleware,createTicketController
+  ],requestValidationMiddleware,createTicketsController
 )
 
 // update ticket amount

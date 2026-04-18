@@ -1,11 +1,11 @@
 import {Request , Response } from "express"
 import { getShowByIdService } from "../shows/show.service";
 import { createTicketService, getTicketsByShowService, reserveTicketService, updateTicketAmountService } from "./ticket.service";
-export async function createTicketController(req:Request,res:Response){
-    const {amount,showId} = req.body;
+export async function createTicketsController(req:Request,res:Response){
+    const {tickets,amount,showId} = req.body;
     const userId = req.user!.id;
     await getShowByIdService(showId,userId as string);
-    const ticket = await createTicketService({amount,userId,showId});
+    const ticket = await createTicketService({amount,userId,showId},tickets);
     res.status(201).json(ticket);
 }
 
@@ -25,8 +25,11 @@ export async function getTicketsByShowController(req:Request,res:Response){
 
 export async function reserveTicketController(req:Request,res:Response){
     const {ticketId} = req.params
+    const version = Number(req.body.version);
     const userId = req.user!.id;
-    const ticket = await reserveTicketService(ticketId as string,userId as string);
+    const lockUntil = Date.now() + 8 * 60 * 1000;
+    const ticket = await reserveTicketService(ticketId as string,userId as string,version,lockUntil);
     res.status(200).json({ticket});
 }
+
 

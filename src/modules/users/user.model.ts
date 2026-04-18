@@ -68,7 +68,7 @@ userSchema.methods.generateJWT = function(this):string{
         status:this.status
     }
     const token = jwt.sign(payload,jwtConfig.JWT_SECRET!,{
-        expiresIn:"1h"
+        expiresIn:"24h"
     });
     return token
 }
