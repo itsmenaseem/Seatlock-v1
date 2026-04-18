@@ -8,7 +8,8 @@ export async function createUserController(req: Request, res: Response) {
    const user = await createUserService({email,password,name});
    const token = user.generateJWT();
      res.cookie("token",token,{
-      sameSite:"lax",
+      sameSite:"none",
+      secure:true,
       httpOnly:true,
        maxAge: 24 * 60 * 60 * 1000 // 1 Day
      })
@@ -22,7 +23,8 @@ export async function loginUserController(req: Request, res: Response){
      const user = await authenticateUserService(email,password);
      const token = user.generateJWT();
      res.cookie("token",token,{
-      sameSite:"lax",
+      sameSite:"none",
+      secure:true,
       httpOnly:true,
        maxAge: 24 * 60 * 60 * 1000 // 1 Day
      })
@@ -31,6 +33,9 @@ export async function loginUserController(req: Request, res: Response){
 
 export function logout(req:Request,res:Response){
   res.cookie("token","",{
+    sameSite:"none",
+    secure:true,
+    httpOnly:true,
     maxAge:0
   });
   res.status(200).json({message:"Logged Out"})
